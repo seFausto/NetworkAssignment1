@@ -1,0 +1,21 @@
+import java.net.ServerSocket;
+
+
+public class TCPServer {
+
+	private static final int _port = 3000;
+	
+	public static void main(String[] args) throws Exception {
+	
+		String clientSentence;
+		String capitalizedSenced;
+		
+		ServerSocket welcomeSocket = new ServerSocket(_port);
+		
+		
+	
+		
+
+	}
+
+}

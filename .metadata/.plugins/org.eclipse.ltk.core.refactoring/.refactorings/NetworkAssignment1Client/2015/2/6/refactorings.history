@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Extract constant &apos;_6789&apos; from expression &apos;6789&apos;&#x0A;- Original project: &apos;NetworkAssignment1Client&apos;&#x0A;- Constant name: &apos;_6789&apos;&#x0A;- Constant expression: &apos;6789&apos;&#x0A;- Declared visibility: &apos;private&apos;" description="Extract constant &apos;_6789&apos;" flags="786432" id="org.eclipse.jdt.ui.extract.constant" input="/src&lt;{TCPClient.java" name="_6789" qualify="false" replace="false" selection="299 4" stamp="1423019631907" version="1.0" visibility="2"/>
+</session>

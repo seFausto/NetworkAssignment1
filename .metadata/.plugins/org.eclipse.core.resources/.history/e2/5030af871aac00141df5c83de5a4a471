@@ -1,0 +1,17 @@
+
+public class TCPServer {
+
+	private final int _port = 3000;
+	
+	public static void main(String[] args) {
+	
+		String clientSentence;
+		String capitalizedSenced;
+		
+		SeverSocket welcomeSocket = new ServerSocket(_port);
+	
+		
+
+	}
+
+}
