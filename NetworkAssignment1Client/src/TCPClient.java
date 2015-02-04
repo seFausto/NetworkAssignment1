@@ -20,8 +20,14 @@ class TCPClient {
 				clientSocket.getInputStream()));
 
 		sentence = inFromUser.readLine();
+		String operation = inFromUser.readLine();
+		// Check for Size... should be less than 256 characters
 
-		outToServer.writeBytes(sentence + '\n');
+		outToServer.writeBytes(sentence + "\n");
+		outToServer.flush();
+		outToServer.writeBytes(operation + "\n");
+		outToServer.flush();
+
 		modifiedSentence = inFromServer.readLine();
 		System.out.println("FROM SERVER: " + modifiedSentence);
 		clientSocket.close();
