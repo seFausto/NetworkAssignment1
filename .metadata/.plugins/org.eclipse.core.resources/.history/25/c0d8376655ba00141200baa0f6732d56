@@ -1,0 +1,45 @@
+import java.io.*;
+import java.net.*;
+
+class TCPClient {
+
+	private static final int _port = 1337;
+	private static final String _serverAddress = "localhost";
+
+	public static void main(String argv[]) throws Exception {
+		String sentence;
+		String modifiedSentence;
+		BufferedReader inFromUser = new BufferedReader(new InputStreamReader(
+				System.in));
+
+		Socket clientSocket = new Socket(_serverAddress, _port);
+
+		DataOutputStream outToServer = new DataOutputStream(
+				clientSocket.getOutputStream());
+
+		BufferedReader inFromServer = new BufferedReader(new InputStreamReader(
+				clientSocket.getInputStream()));
+		System.out.println("Please input a string to encode/decode.");
+		System.out.println("To Stop the server send \"goodbye!\"): ");
+		sentence = inFromUser.readLine();
+		System.out.print("Should this be Encoded or Decoded (E or D): ");
+		String operation = inFromUser.readLine();
+		// Check for Size... should be less than 256 characters
+
+		outToServer.writeBytes(sentence + "\n");
+		outToServer.flush();
+		outToServer.writeBytes(operation + "\n");
+		outToServer.flush();
+
+		modifiedSentence = inFromServer.readLine();
+		System.out.println("FROM SERVER: " + modifiedSentence);
+		clientSocket.close();
+	}	
+	
+	private static Boolean IsServerReachable()
+	{
+		  return InetAddress.getByName(_serverAddress).isReachable(100);
+	}
+	
+
+}

@@ -37,11 +37,11 @@ class TCPClient {
 				modifiedSentence = inFromServer.readLine();
 				System.out.println("FROM SERVER: " + modifiedSentence);
 				clientSocket.close();
-
-				if (sentence.toLowerCase().equals("goodbye!")) {
+				
+				if (sentence.toLowerCase().equals("goodbye!")
+						{
 					System.out.println("Closing. Thank you :)");
-					return;
-				}
+						}
 			}
 
 		} catch (UnknownHostException e) {
